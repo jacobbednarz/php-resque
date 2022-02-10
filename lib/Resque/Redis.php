@@ -143,10 +143,6 @@ class Resque_Redis
 					$database = $dsnDatabase;
 				}
 			}
-
-			if ($database !== null) {
-				$this->driver->select($database);
-			}
 		}
 		catch(CredisException $e) {
 			throw new Resque_RedisException('Error communicating with Redis: ' . $e->getMessage(), 0, $e);
