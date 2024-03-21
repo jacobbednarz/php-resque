@@ -46,6 +46,7 @@ class Resque_Job_Status
 	{
 		$this->id = $id;
 		$this->prefix = empty($prefix) ? '' : "${prefix}_";
+		$this->isTracking = getenv('RESQUE_DISABLE_JOB_TRACKING') === "1" ? false: null;
 	}
 
 	/**
